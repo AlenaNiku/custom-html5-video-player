@@ -20,7 +20,17 @@ function togglePlay() {
     }
 }
 
-// Step 3 - hook up the event listeners
+// function that will switch the look of our button from play to pause
+function updateButton() {
+    const icon = this.paused ? '►' : '❚ ❚'
+    // console.log(icon)
+    toggle.textContent = icon
+}
 
+// Step 3 - hook up the event listeners
 video.addEventListener('click', togglePlay)
+video.addEventListener('play', updateButton)
+video.addEventListener('pause', togglePlay)
+
+
 toggle.addEventListener('click', togglePlay)
