@@ -10,6 +10,14 @@ const ranges = player.querySelectorAll('.player__slider');
 
 // Step 2 - build the functions
 
-
+// function responsible for palying and pausing the video
+// .paused is the property that lives on video
+function togglePlay() {
+    if (video.paused) {
+        video.play()
+    } else {
+        video.pause()
+    }
+}
 
 // Step 3 - hook up the event listeners
