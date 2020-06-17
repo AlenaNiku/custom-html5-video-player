@@ -29,8 +29,15 @@ function updateButton() {
 
 // look at the html data-skip property => that's how you understand how much to skip
 function skip() {
-    console.log(this.dataset.skip)
+    // console.log(this.dataset.skip)
     video.currentTime += parseFloat(this.dataset.skip)
+}
+
+function handleRangeUpdate() {
+    // value and name are both values on the video
+    video[this.name] = this.value
+    // console.log(this.value)
+    // console.log(this.name)
 }
 
 // Step 3 - hook up the event listeners
@@ -39,4 +46,8 @@ video.addEventListener('play', updateButton)
 video.addEventListener('pause', togglePlay)
 
 toggle.addEventListener('click', togglePlay)
+
 skipButtons.forEach(button => button.addEventListener('click', skip))
+
+ranges.forEach(range => range.addEventListener('change', handleRangeUpdate))
+ranges.forEach(range => range.addEventListener('mousemove', handleRangeUpdate))
