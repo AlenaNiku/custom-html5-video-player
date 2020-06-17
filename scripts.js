@@ -27,10 +27,16 @@ function updateButton() {
     toggle.textContent = icon
 }
 
+// look at the html data-skip property => that's how you understand how much to skip
+function skip() {
+    console.log(this.dataset.skip)
+    video.currentTime += parseFloat(this.dataset.skip)
+}
+
 // Step 3 - hook up the event listeners
 video.addEventListener('click', togglePlay)
 video.addEventListener('play', updateButton)
 video.addEventListener('pause', togglePlay)
 
-
 toggle.addEventListener('click', togglePlay)
+skipButtons.forEach(button => button.addEventListener('click', skip))
