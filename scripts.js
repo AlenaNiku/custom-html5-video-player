@@ -23,3 +23,4 @@ function togglePlay() {
 // Step 3 - hook up the event listeners
 
 video.addEventListener('click', togglePlay)
+toggle.addEventListener('click', togglePlay)
